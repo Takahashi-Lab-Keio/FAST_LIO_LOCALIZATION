@@ -3,7 +3,7 @@
 
     <arg name="rviz" default="true" />
 
-    <rosparam command="load" file="$(find fast_lio_localization)/config/velodyne.yaml" />
+    <rosparam command="load" file="$(find ytlab_FAST_LIO_modules)/config/velodyne.yaml" />
 
     <param name="feature_extract_enable" type="bool" value="0"/>
     <param name="point_filter_num" type="int" value="4"/>
@@ -13,9 +13,9 @@
     <param name="cube_side_length" type="double" value="1000" />
     <param name="runtime_pos_log_enable" type="bool" value="0" />
     <param name="pcd_save_enable" type="bool" value="0" />
-    <node pkg="fast_lio_localization" type="fastlio_mapping" name="laserMapping" output="screen" />
+    <node pkg="fast_lio_localization" type="fastlio_mapping_for_localization" name="laserMapping" output="screen" />
 
-    <arg name="map" default="" />
+    <arg name="map" default="$(find ytlab_FAST_LIO_modules)/map/map3d.pcd" />
     <!-- loalization-->
     <node pkg="fast_lio_localization" type="global_localization.py" name="global_localization" output="screen" />
 
